@@ -1,0 +1,34 @@
+from sklearn.linear_model import LogisticRegression
+
+def main():
+    # Features: Customer Age
+    X = [[18], [22], [25], [30], [35], [40], [45], [50]]
+
+    # 0- will not but, 1-will buy
+    y = [0, 0, 0, 0, 1, 1, 1, 1]
+
+    # create the model
+    model = LogisticRegression()
+
+    # train the model
+    model.fit(X,y)
+
+    # Predict for new customers
+    new_customers = [[20], [32], [48]]
+    prediction = model.predict(new_customers)
+    print("Predicted Results:", prediction)
+
+    # Predict Probability
+
+    probability = model.predict_proba(new_customers)
+
+    print("Prediction Probabilityes:")
+    print(probability)
+
+if __name__ == "__main__":
+    main()
+
+
+
+if __name__ == "__main__":
+    main()
